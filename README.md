@@ -38,5 +38,5 @@ env:
 
 after_success:
   - echo "after_success"
-  - bash devtools/travis-ci/after_success.sh
+  - if [ "$TRAVIS_SECURE_ENV_VARS" == true ]; then source devtools/travis-ci/after_success.sh; fi
 ```
