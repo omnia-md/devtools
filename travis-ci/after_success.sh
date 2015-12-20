@@ -22,7 +22,7 @@ if [ $PUSH_DOCS_TO_S3 = true ]; then
    # Create the docs and push them to S3
    # -----------------------------------
     conda install --yes pip
-    conda config --add channels http://conda.binstar.org/omnia
+    conda config --add channels $ORGNAME
     conda install --yes `conda build devtools/conda-recipe --output`
     pip install numpydoc s3cmd msmb_theme
     conda install --yes `cat docs/requirements.txt | xargs`
